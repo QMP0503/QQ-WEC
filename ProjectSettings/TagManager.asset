@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Projectile
   - HealthPack
+  - Asteroids
   layers:
   - Default
   - TransparentFX

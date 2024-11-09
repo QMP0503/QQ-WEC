@@ -9,7 +9,6 @@ public class Health : MonoBehaviour
     public float health;
     public float maxHealth;
     public Image healthBar;
-    public float damage;
 
 
     // Start is called before the first frame update
@@ -33,10 +32,10 @@ public class Health : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Asteroid"))
+        if (other.gameObject.CompareTag("Asteroids"))
         {
-            health -= damage;
-
+            health -= 25;
+            Destroy(other.gameObject);
             //add tag player to player object
         }
         if (other.gameObject.CompareTag("HealthPack"))
