@@ -9,10 +9,11 @@ public class Health : MonoBehaviour
     public float health;
     public float maxHealth;
     public Image healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = health;
+        health = maxHealth;
     }
 
     // Update is called once per frame
