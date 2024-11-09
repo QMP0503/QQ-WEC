@@ -9,11 +9,13 @@ public class Health : MonoBehaviour
     public float health;
     public float maxHealth;
     public Image healthBar;
+    public float damage;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        health = maxHealth;
+        //health = maxHealth;
     }
 
     // Update is called once per frame
@@ -25,5 +27,23 @@ public class Health : MonoBehaviour
         {
             Destroy(gameObject); //have transition to game over screen life is on 0
         }
+
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Asteroid"))
+        {
+            health -= damage;
+
+            //add tag player to player object
+        }
+        if (other.gameObject.CompareTag("HealthPack"))
+        {
+            health += 25;
+            Destroy(other.gameObject);
+        }
+
     }
 }

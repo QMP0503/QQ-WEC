@@ -6,9 +6,8 @@ public class Player : MonoBehaviour
     private bool _thrusting;
     private bool _reversing;
     private float _turnDirection;
-    public Health playerHealth;
 
-   
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -51,19 +50,4 @@ public class Player : MonoBehaviour
         }
     }
 
-    //methods to add to player
-    public void OntriggerEnter2D(Collider2D collision)
-    {
-        PowerUps powerUps = collision.GetComponent<PowerUps>();
-        if (powerUps.healthPack == true)
-        {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                playerHealth.health += 10;
-
-                //add tag player to player object
-            }
-        }
-
-    }
 }
