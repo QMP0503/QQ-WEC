@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,5 +27,20 @@ public class GameManager : MonoBehaviour
     {
         this.player.transform.position = Vector3.zero;
         this.player.gameObject.SetActive(true);
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadSceneAsync(1);
+        this.lives = 3;
+        // this.score = 0;
+
+        Invoke(nameof(Respawn), this.respawnTime);
+    }
+
+    // Quit game
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
