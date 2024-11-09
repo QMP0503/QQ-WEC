@@ -10,6 +10,6 @@ public class AmmoBuff : PowerupEffect
 
     public override void Apply(GameObject target)
     {
-        target.GetComponent<Ammo>().ammo.value += ammoIncrease;
+        //target.GetComponent<Ammo>().ammo.value += ammoIncrease;
     }
 }
