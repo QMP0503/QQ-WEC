@@ -13,7 +13,7 @@ public class PowerUps : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         
+         packValue = 10;
     }
 
     // Update is called once per frame
@@ -27,23 +27,7 @@ public class PowerUps : MonoBehaviour
         
     }
 
-    public Health playerHealth;
-
-    //methods to add to player
-    public void OntriggerEnter2D(Collider2D collision)
-    {
-        PowerUps powerUps = collision.GetComponent<PowerUps>();
-        if(powerUps.healthPack == true)
-        {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                playerHealth.health += ;
-
-                //add tag player to player object
-            }
-        }
-       
-    }
+   
 
 
 
